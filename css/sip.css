@@ -1,0 +1,55 @@
+body {
+ font-family:fantasy, "Times New Roman", sans-serif, serif;
+}
+
+#header_bg {
+   max width: 1000px;
+   max-height: 40px;
+}
+
+div.homescreen {
+  border: solid gray 2px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+div.column {
+  width: 29%;
+  margin-left: 2%;
+  padding-right: 1%;
+  float: left;
+  border-right: solid grey 2px;
+}
+.title, p {
+  text-align: center;
+  padding: 0 auto;S
+}
+li {
+  list-style-type: none;
+}
+#product_list li img{
+  display: inline-block;
+  max-width: 80px;
+  max-height: 80px;
+  padding: 0;
+  float: left;
+}
+
+
+.column{
+  width: 29%;
+  margin-left:2%;
+  padding-right:1%;
+  float:left;
+  border-right: solid grey 2px;
+}
+/*
+.column:last-child {
+  border:none;
+}*/
+.row {
+  clear: both;
+}
+
+footer {
+  margin-bottom: 0 auto;
+}
