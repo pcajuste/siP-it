@@ -1,10 +1,21 @@
 body {
  font-family:fantasy, "Times New Roman", sans-serif, serif;
-}
+ background-color: #3D464D;
+ color: white;
 
-#header_bg {
-   max width: 1000px;
-   max-height: 40px;
+
+}
+/*
+label {
+  text-emphasis: bold;
+}
+h2 {
+  text-align: center;
+  color: #990033;
+  margin-top:8px;
+  margin-bottom: 8px;
+  padding-top: 4px;
+  border: solid black 1px;
 }
 
 div.homescreen {
@@ -12,21 +23,28 @@ div.homescreen {
   max-width: 1000px;
   margin: 0 auto;
 }
-div.column {
-  width: 29%;
-  margin-left: 2%;
-  padding-right: 1%;
-  float: left;
-  border-right: solid grey 2px;
+#menu_selections, button {
+  text-align: left;
+  margin-bottom:2%;
+  margin-top:2%;
 }
-.title, p {
+#main_menu {
+  padding-left: 0px;
+}
+*/
+.title{
   text-align: center;
-  padding: 0 auto;S
+  background-color: #bbddee;
+  font-size:39pt;
+  margin-top: 0;
+  margin-bottom:3px;
+  border: solid grey 2px;
+  padding: 6px;
 }
 li {
   list-style-type: none;
 }
-#product_list li img{
+#product_list li {
   display: inline-block;
   max-width: 80px;
   max-height: 80px;
@@ -34,13 +52,26 @@ li {
   float: left;
 }
 
-
-.column{
-  width: 29%;
+.order_column{
+  width: 30%;
   margin-left:2%;
   padding-right:1%;
   float:left;
   border-right: solid grey 2px;
+}
+.product_column{
+  width: 46%;
+  margin-left:2%;
+  padding-right:1%;
+  float:left;
+  border-right: solid grey 2px;
+}
+.menu_column{
+  width: 15%;
+  margin-left:.2%;
+  padding-right: 2%;
+  float:left;
+  border-right: solid  2px;
 }
 /*
 .column:last-child {
@@ -49,7 +80,15 @@ li {
 .row {
   clear: both;
 }
-
-footer {
-  margin-bottom: 0 auto;
+textarea {
+  resize: none;
+  border: solid grey 2px;
+  readonly: yes;
+  background-color: #347889;
 }
+
+
+.wine_info {
+  padding_right : 2px;
+  float: left;
+}*/
