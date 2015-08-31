@@ -73,7 +73,7 @@ var wine_cellar = {
      pic:'joie.png',
      history: 'Verite la joie is a wine-growing AOC in the northern Rhône wine region of France, near Vienne, which produces white wine from Viognier grapes.'
    }
- ]
+  ]
 };
 
 $(document).ready(function(){
@@ -94,31 +94,9 @@ $(document).ready(function(){
   wine_list_div.append(wine_list_ul_italy);
   wine_list_div.append(wine_list_ul_usa);
 
- var china=
-   {
-     name: 'One Wine only',
-     price: 40000,
-     pic:'banfi.png',
-     history: 'Your one wine entry has been added. Enter details later.'
-   };
-
- var canada = [
-   {
-     name: 'Wine 1 of 2',
-     price: 4000,
-     pic:'wine_cellar.jpg',
-     history: 'Your one wine entry has been added. Enter details later.'
-   },
-   {
-     name: 'Wine 2 o f 2',
-     price: 700000,
-     pic:'wine_cellar_good.jpg',
-     history: 'Your one wine entry has been added. Enter details later.'
-   }];
-
-
   //display the French wine list in the catalogue column
   wine_cellar.france.forEach(function(wine_bottle){
+
     var wine_list_label = $('<li>'+'<span>'+ wine_bottle.name+'</span>'+'</li>');
     var wine_list_li = $('<li>'+'<button '+ 'style='+'background:'+ 'url'+'(./img/'+wine_bottle.pic+')'+'>'+'</button>'+'</li>');
     var wine_list_price = $('<li>'+'<article>'+ '$'+wine_bottle.price+'</article>'+'</li>');
@@ -128,7 +106,7 @@ $(document).ready(function(){
     $('#wine_list_fr').css('float', 'left');
     $('#wine_list_fr').css('border', 'solid 4px');
     $('#wine_list_fr').css('padding', '10px');
-    $('#wine_list_fr').css('margin-right', '10px');
+    $('#wine_list_us').css('margin-right', '10px');
 
     //open the link with its respective wine image
     wine_list_li.on('click',function(){
@@ -156,28 +134,10 @@ $(document).ready(function(){
         "Total Due: $"+total_due
       );
     })
-
-    //add extra wine bottle to the page
-    $('#add_more_wine').on('click',function(){
-      
-      wine_cellar.usa.push(china);
-      console.log(wine_cellar);;
-      var wine_list_label = $('<li>'+'<span>'+ wine_bottle.name+'</span>'+'</li>');
-      var wine_list_li = $('<li>'+'<button '+ 'style='+'background:'+ 'url'+'(./img/'+wine_bottle.pic+')'+'>'+'</button>'+'</li>');
-      var wine_list_price = $('<li>'+'<article>'+ '$'+wine_bottle.price+'</article>'+'</li>');
-      var wine_list_leaf = wine_list_ul_usa.append(wine_list_label);
-      wine_list_leaf.append(wine_list_li);
-      wine_list_leaf.append(wine_list_price);
-      $('#wine_list_us').css('float', 'left');
-      $('#wine_list_us').css('padding', '10px');
-      $('#wine_list_us').css('border', 'solid 4px');
-      $('#wine_list_us').css('margin-right', '4px');
-    })
-
   });
 
   //display the Italy wine list in the catalogue column
-  wine_cellar.italy.forEach(function(wine_bottle){
+var italy_cellar  wine_cellar.italy.forEach(function(wine_bottle){
     var wine_list_label = $('<li>'+'<span>'+ wine_bottle.name+'</span>'+'</li>');
     var wine_list_li = $('<li>'+'<button '+ 'style='+'background:'+ 'url'+'(./img/'+wine_bottle.pic+')'+'>'+'</button>'+'</li>');
     var wine_list_price = $('<li>'+'<article>'+ '$'+wine_bottle.price+'</article>'+'</li>');
@@ -187,7 +147,7 @@ $(document).ready(function(){
     $('#wine_list_it').css('float', 'left');
     $('#wine_list_it').css('padding', '10px');
     $('#wine_list_it').css('border', 'solid 4px');
-    $('#wine_list_it').css('margin-right', '10px');
+    $('#wine_list_us').css('margin-right', '10px');
 
     //open the link with its respective wine image
     wine_list_li.on('click',function(){
@@ -215,11 +175,10 @@ $(document).ready(function(){
         "Total Due: $"+total_due
       );
     })
-
   });
 
 //display the USA wine list in the catalogue column
-  wine_cellar.usa.forEach(function(wine_bottle){
+var french_cellar =  wine_cellar.usa.forEach(function(wine_bottle){
     var wine_list_label = $('<li>'+'<span>'+ wine_bottle.name+'</span>'+'</li>');
     var wine_list_li = $('<li>'+'<button '+ 'style='+'background:'+ 'url'+'(./img/'+wine_bottle.pic+')'+'>'+'</button>'+'</li>');
     var wine_list_price = $('<li>'+'<article>'+ '$'+wine_bottle.price+'</article>'+'</li>');
@@ -256,7 +215,7 @@ $(document).ready(function(){
         "Total Tax: $"+total_tax + '\n'+
         "Total Due: $"+total_due
       );
-    });
+    })
   })
 
 // add styling to titles, buttons, and prices elments on the page
@@ -268,39 +227,10 @@ $(document).ready(function(){
       $('button').css('width','120px');
       $('button').css('height','60px');
 
-      //------------------------EVENTS-----------------------------------
-      // add buttons to hide and show elements on the page
+// add buttons to hide and show elements on the page
       var french_wine_button = $('<button id="french" name="click to view only USA wine">French</button>').appendTo('#wine_category');
       var italy_wine_button = $('<button id="italy name="click to view only USA wine"">Italy</button>').appendTo('#wine_category');
       var usa_wine_button = $('<button id="usa" name="click to view only USA wine">USA</button>').appendTo('#wine_category');
-      var all_button = $('<button id="all" name="click to view only USA wine">All</button>').appendTo('#wine_category');
 
-    // adds space between above 3 buttons
       $('#wine_category > button').css('margin','6px')
-
-        french_wine_button.on('click', function(){
-            $('#wine_list_it').toggle()
-            $('#wine_list_us').toggle();
-        })
-        italy_wine_button.on('click', function(){
-          $('#wine_list_fr').toggle();
-          $('#wine_list_us').toggle();
-        })
-        usa_wine_button.on('click', function(){
-          $('#wine_list_fr').toggle();
-          $('#wine_list_it').toggle();
-        })
-        all_button.on('click', function(){
-          $('#wine_list_fr').show();
-          $('#wine_list_it').show();
-          $('#wine_list_us').show();
-        })
-
-//change the menu button colors on hover from yellow to orange.
-        $('.menu button').hover(function(){
-          $(this).css('background-color', 'tomato');
-        }, function(){
-          $(this).css('background-color', 'yellow');
-        })
-
 })
