@@ -122,9 +122,11 @@ $(document).ready(function(){
     var wine_list_label = $('<li>'+'<span>'+ wine_bottle.name+'</span>'+'</li>');
     var wine_list_li = $('<li>'+'<button '+ 'style='+'background:'+ 'url'+'(./img/'+wine_bottle.pic+')'+'>'+'</button>'+'</li>');
     var wine_list_price = $('<li>'+'<article>'+ '$'+wine_bottle.price+'</article>'+'</li>');
+    // var click_to_order = $('<li></li>')
     var wine_list_leaf = wine_list_ul_france.append(wine_list_label);
     wine_list_leaf.append(wine_list_li);
     wine_list_leaf.append(wine_list_price);
+    // wine_list_leaf.append(click_to_order);
     $('#wine_list_fr').css('float', 'left');
     $('#wine_list_fr').css('border', 'solid 4px');
     $('#wine_list_fr').css('padding', '10px');
@@ -159,7 +161,7 @@ $(document).ready(function(){
 
     //add extra wine bottle to the page
     $('#add_more_wine').on('click',function(){
-      
+
       wine_cellar.usa.push(china);
       console.log(wine_cellar);;
       var wine_list_label = $('<li>'+'<span>'+ wine_bottle.name+'</span>'+'</li>');
